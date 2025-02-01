@@ -202,7 +202,7 @@ def index_datasets_one_indexer(train_data, dev_data, test_data, example_len_limi
 
 
 ##################################################
-# YOU SHOULD NOT NEED TO LOOK AT THESE FUNCTIONS #
+# UTILITY FUNCTIONS #
 ##################################################
 def print_evaluation_results(test_data, selected_derivs, denotation_correct, example_freq=50, print_output=True):
     """
