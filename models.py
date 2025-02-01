@@ -16,8 +16,7 @@ def initialize_seq2seq_model(vocab_size: int):
     """
     :param vocab_size: The size of the vocabulary to use
     :return: A randomly initialized BartForConditionalGeneration model, with relatively small parameter sizes compared
-    to what they are by default. You can modify these to experiment if you'd like, but it's outside the scope of
-    what's intended in the assignment.
+    to what they are by default.
     """
     # The hyperparameters of the BART model are defined here
     # They are smaller than any of the standard BART models,
@@ -78,8 +77,6 @@ def train_seq2seq_model(model, train_dataset, val_dataset, args):
 def score_sequence(pred_to_first_eos, gold_labels) -> (int, int, int):
     """
     Evaluates the given sequence and returns the sufficient statistics for accuracy computation.
-    DO NOT MODIFY THIS -- we are giving it to you here in models.py for convenience, but we will compute your accuracy
-    with an unmodified version of it.
     :param pred_to_first_eos: predicted tokens (real tokens, not indexed) up to and including an <EOS> token
     :param gold_labels: the gold labels (which also include EOS)
     :return: a tuple of exact_match (1 or 0), the token-level recall (the fraction of tokens in the gold that are matched
@@ -208,19 +205,18 @@ const_list = ['new', 'north', 'south', 'west', 'east', 'alabama', 'alaska', 'ari
 ########
 
 #Transformer Layer
-# This layer should follow the format discussed in class:
-# (1) self-attention (single- headed is fine; you can use either backward-only or bidirectional attention);
+# This layer should follow the format:
+# (1) self-attention (single- headed is fine; use either backward-only or bidirectional attention);
 # (2) residual connection;
 # (3) Linear layer, nonlinearity, and Linear layer;
 # (4) final residual connection.
 # With a shallow network like this, you likely don’t need layer normalization, which is a bit more complicated to implement.
-# Because this task is relatively simple, you don’t need a very well-tuned architecture to make this work.
-# You will implement all of these components from scratch.
-# You will want to form queries, keys, and values matrices with linear layers,
-# then use the queries and keys to compute attention over the sentence,
-# then combine with the values.
-# You’ll want to use matmul for this purpose, and you may need to transpose matrices as well.
-# Double-check your dimensions and make sure everything is happening over the correct dimension.
+# Because this task is relatively simple, no well-tuned architecture needed to make this work.
+# this exercise implements compents from scratch so as to learn about them 
+# All form queries, keys, and values matrices will be formed with linear layers,
+# using the queries and keys to compute attention over the sentence,
+# then it will combine with the values.
+# using matmul for this purpose, and transposition of matrices as well.
 
 def TransformerLayer():
 
