@@ -25,7 +25,7 @@ class LetterCountingExample(object):
         self.output_tensor = torch.LongTensor(self.output)
 
 
-# Should contain your overall Transformer implementation. You will want to use Transformer layer to implement
+# Contains Transformer implementation. Transformer layer implements
 # a single layer of the Transformer; this Module will take the raw words as input and do all of the steps necessary
 # to return distributions over the labels (0, 1, or 2).
 class Transformer(nn.Module):
@@ -68,7 +68,7 @@ class Transformer(nn.Module):
         """
 
 
-# Your implementation of the Transformer layer goes here. It should take vectors and return the same number of vectors
+#Transformer layer Implementation:  Takes vectors and return the same number of vectors
 # of the same length, applying self-attention, the feedforward layer, etc.
 class TransformerLayer(nn.Module):
     def __init__(self, d_model, d_internal):
@@ -180,7 +180,7 @@ def train_classifier(args, train, dev):
     Doesn't do the softmax for you, so lets you do it when you want
     Crossentropy covers the softmax part
     """
-    # The following code DOES NOT WORK but can be a starting point for your implementation
+    # The following code DOES NOT WORK but can be a starting point for implementation
     # Some suggested snippets to use:
     model = Transformer(...)  # vocab_size, num_positions, d_model, d_internal, num_classes, num_layers
     model.zero_grad()
@@ -210,9 +210,7 @@ def train_classifier(args, train, dev):
     return model
 
 
-####################################
-# DO NOT MODIFY IN YOUR SUBMISSION #
-####################################
+
 def decode(model: Transformer, dev_examples: List[LetterCountingExample], do_print=False, do_plot_attn=False):
     """
     Decodes the given dataset, does plotting and printing of examples, and prints the final accuracy.
