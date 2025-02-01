@@ -9,9 +9,7 @@ from transformer import *
 # uses same data as A4, You get the same size index, etc
 # produces a bunch of letter counting examples (see Transformer.py)
 # these wrap input and output
-####################################################
-# DO NOT MODIFY THIS FILE IN YOUR FINAL SUBMISSION #
-####################################################
+
 
 
 def _parse_args():
